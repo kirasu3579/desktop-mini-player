@@ -1,0 +1,76 @@
+{
+  "configs": [
+    {
+      "title": "迷你播放器",
+      "config": "config.json",
+      "preferences": [
+        {
+          "type": "switch",
+          "key": "enabled",
+          "title": "启用迷你播放器",
+          "summary": "关闭后立刻隐藏悬浮迷你条；重新打开会立刻显示，不用重启播放器",
+          "default_value": true
+        },
+        {
+          "type": "switch",
+          "key": "hideWhenPaused",
+          "title": "暂停时隐藏",
+          "summary": "播放中显示；一旦暂停就整条收起，恢复播放自动出现（缓冲与播放结束不隐藏）",
+          "default_value": false
+        },
+        {
+          "type": "list",
+          "key": "themeMode",
+          "title": "配色模式",
+          "summary": "迷你条没有背景，配色决定文字/图标是深色还是白色；请按桌面壁纸明暗选",
+          "entries": ["跟随系统", "浅色", "深色"],
+          "entry_values": ["system", "light", "dark"],
+          "default_value": "system"
+        },
+        {
+          "type": "switch",
+          "key": "locked",
+          "title": "锁定位置",
+          "summary": "开启后整条不能拖动，右键菜单也不再弹出；播控按钮与进度条照常可用",
+          "default_value": false
+        },
+        {
+          "type": "switch",
+          "key": "autoHideControls",
+          "title": "鼠标离开后收起为歌词态",
+          "summary": "鼠标移开 0.45 秒后交叉淡入「封面 + 当前歌词」，移回立即恢复完整布局",
+          "default_value": true
+        },
+        {
+          "type": "seekbar",
+          "key": "opacity",
+          "title": "不透明度",
+          "default_value": 100.0,
+          "min": 60.0,
+          "max": 100.0
+        },
+        {
+          "type": "button",
+          "title": "显示 / 隐藏迷你条",
+          "summary": "立刻切换悬浮条的显示状态（与上面的「启用迷你播放器」开关等价）",
+          "arrow_type": "none",
+          "on_click": "com.miniplayer.PluginConfig.toggleMiniPlayer"
+        },
+        {
+          "type": "button",
+          "title": "重置窗口位置",
+          "summary": "把迷你条挪回主屏中央",
+          "arrow_type": "none",
+          "on_click": "com.miniplayer.PluginConfig.resetWindowPosition"
+        },
+        {
+          "type": "button",
+          "title": "显示当前设置",
+          "summary": "在播放器中以提示条显示已生效的选项",
+          "arrow_type": "none",
+          "on_click": "com.miniplayer.PluginConfig.showCurrentSettings"
+        }
+      ]
+    }
+  ]
+}

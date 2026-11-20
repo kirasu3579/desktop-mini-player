@@ -1,0 +1,8 @@
+# 统一换行：脚本必须保持 LF，否则 Git Bash 里会报 "bad interpreter"
+* text=auto eol=lf
+*.sh  text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.jar binary
+*.spmod binary
+*.png binary

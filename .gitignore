@@ -1,0 +1,18 @@
+# 构建产物
+build/
+preview/
+
+# 临时验证脚本与 class 文件
+.t/
+*.class
+
+# IDE / 系统
+.idea/
+*.iml
+.vscode/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 本地依赖（体积大，由使用者自行准备）
+.refs/
