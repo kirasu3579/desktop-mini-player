@@ -10,8 +10,11 @@
 
 ## 安装
 
+不想自己编译的话，直接从 [Releases](https://github.com/kirasu3579/desktop-mini-player/releases)
+下载 `plugin-com.miniplayer.desktop-mini-player-<版本>.spmod`，从下面第 1 步开始做。
+
 1. 关闭 Salt Player。
-2. 把 `build/libs/plugin-com.miniplayer.desktop-mini-player-<版本>.spmod` 解压到
+2. 把 `plugin-com.miniplayer.desktop-mini-player-<版本>.spmod` 解压到
    `%APPDATA%\Salt Player for Windows\workshop\plugins\com.miniplayer.desktop-mini-player-<版本>\`
    （也可直接把 `.spmod` 放进该目录，再用创意工坊或宿主插件页安装）。
    解压后目录结构应为：
