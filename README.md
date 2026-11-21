@@ -361,6 +361,16 @@ bash build.sh     # 产出 build/libs/plugin-com.miniplayer.desktop-mini-player-
 bash preview.sh   # 出一套静态预览图 + 两张真机截图到 preview/
 ```
 
+发版（PowerShell，用已登录的 Git Credential Manager 令牌，无需额外配置）：
+
+```powershell
+pwsh -File tools\release.ps1 -NotesPath docs\releases\v<版本>.md -DryRun   # 先自检版本号/产物/SHA256
+pwsh -File tools\release.ps1 -NotesPath docs\releases\v<版本>.md           # 建 tag、传附件、发布
+```
+
+发布说明放在 `docs/releases/v<版本>.md`，正文会原样成为 Release 描述；脚本对已存在的同名
+release 直接报错而不是覆盖——发布过的版本不该被一次误跑悄悄替换。
+
 探针（`preview-src/`，编译后 `java -cp "..." com.miniplayer.<名字>`）：
 
 | 探针 | 作用 |
@@ -429,6 +439,8 @@ desktop-mini-player/
 │   ├── META-INF/extensions.idx
 │   └── preference_config.json
 ├── preview-src/                 离线预览与真机 Demo（不参与打包）
+├── tools/release.ps1            发版：建 tag + 传 spmod + 发布 Release
+├── docs/releases/v<版本>.md     各版本发布说明（正文即 Release 描述）
 └── verify-src/                  离线 PF4J 描述符/扩展校验器
 ```
 
